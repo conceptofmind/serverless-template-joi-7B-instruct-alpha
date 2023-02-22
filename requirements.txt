@@ -1,4 +1,5 @@
 sanic==22.6.2
+torch
 transformers
 bitsandbytes
 accelerate
