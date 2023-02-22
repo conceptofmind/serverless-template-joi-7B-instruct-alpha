@@ -20,7 +20,6 @@ def download_model():
         name, 
         device_map=joi_map, 
         torch_dtype=torch.float16,
-        load_in_8bit=True
         )
     print("done")
     print("downloading tokenizer...")
