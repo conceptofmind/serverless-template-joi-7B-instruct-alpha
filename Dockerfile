@@ -5,6 +5,9 @@ WORKDIR /
 
 COPY ./cuda-keyring_1.0-1_all.deb cuda-keyring_1.0-1_all.deb
 
+# Install git
+RUN apt-get update && apt-get install -y git
+
 # Install python packages
 RUN pip3 install --upgrade pip
 ADD requirements.txt requirements.txt
