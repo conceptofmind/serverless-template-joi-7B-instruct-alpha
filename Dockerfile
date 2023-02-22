@@ -3,9 +3,6 @@ FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-devel
 
 WORKDIR /
 
-# Install git
-RUN apt-get install -y git
-
 # Install python packages
 RUN pip3 install --upgrade pip
 ADD requirements.txt requirements.txt
