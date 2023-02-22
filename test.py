@@ -3,7 +3,7 @@
 
 import requests
 
-model_inputs = {'prompt': 'Hello I am a [MASK] model.'}
+model_inputs = {'prompt': 'Hello, my dog is cute'}
 
 res = requests.post('http://localhost:8000/', json = model_inputs)
 
