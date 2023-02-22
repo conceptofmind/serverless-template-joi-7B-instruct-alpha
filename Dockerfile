@@ -3,7 +3,8 @@ FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-devel
 
 WORKDIR /
 
-RUN wget https://developer.download.nvidia.com/compute/cuda/repos/$distro/$arch/cuda-keyring_1.0-1_all.deb && -i cuda-keyring_1.0-1_all.deb
+RUN rm /etc/apt/sources.list.d/cuda.list
+RUN rm /etc/apt/sources.list.d/nvidia-ml.list
 
 # Install git
 RUN apt-get update && apt-get install -y git
