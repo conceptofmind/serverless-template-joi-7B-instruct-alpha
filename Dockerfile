@@ -3,7 +3,8 @@ FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-devel
 
 WORKDIR /
 
-COPY ./cuda-keyring_1.0-1_all.deb cuda-keyring_1.0-1_all.deb
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/$distro/$arch/cuda-keyring_1.0-1_all.deb
+RUN -i cuda-keyring_1.0-1_all.deb
 
 # Install git
 RUN apt-get update && apt-get install -y git
