@@ -16,10 +16,12 @@ def download_model():
     }
     name = "Rallio67/joi_7B_instruct_alpha"
     print("downloading model...")
-    try:
-        AutoModelForCausalLM.from_pretrained(name, device_map=joi_map, torch_dtype=torch.float16)
-    except:
-        pass
+    AutoModelForCausalLM.from_pretrained(
+        name, 
+        device_map=joi_map, 
+        torch_dtype=torch.float16,
+        load_in_8bit=True
+        )
     print("done")
     print("downloading tokenizer...")
     AutoTokenizer.from_pretrained(name)
